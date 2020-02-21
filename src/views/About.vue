@@ -1,5 +1,10 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <div class="about">about</div>
 </template>
+<script lang="ts">
+// @ is an alias to /src
+import Vue from 'vue'
+
+export default class AboutPage extends Vue {}
+</script>
+<style lang="scss"></style>
