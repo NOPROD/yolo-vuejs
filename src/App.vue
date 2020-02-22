@@ -9,11 +9,15 @@
 </template>
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
+import { SharedInstanceS, AnimeS, ApiService, UserS, UserFS } from '@/services'
 @Component
 export default class App extends Vue {
   mounted() {
-    const e = this.$store.getters.getByModule()
-    console.log(e)
+    SharedInstanceS.setInstance(this)
+    AnimeS
+    ApiService
+    UserS
+    UserFS
   }
 }
 </script>
