@@ -1,16 +1,12 @@
 <template>
-  <div>
-    <div class="hello">hello comp</div>
-    <Icon />
-  </div>
+  <div class="draggable">Draggable Element</div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import Icon from './os/main/icon.vue'
 
-@Component({ props: { msg: {} }, components: { Icon } })
-export default class Home extends Vue {}
+@Component({ props: { icon: {} } })
+export default class Icon extends Vue {}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

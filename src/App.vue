@@ -9,7 +9,7 @@
 </template>
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import { SharedInstanceS } from '@/services'
+import { SharedInstanceS, DraggableS, ContextMenuS } from '@/services'
 import { RpgS } from '@/services/games'
 import { KeyboardS } from '@/services/utils'
 @Component
@@ -23,6 +23,7 @@ export default class App extends Vue {
   private initAll() {
     this.initSharedInstance()
     this.initUtils()
+    this.initDocumentUtils()
   }
 
   private initSharedInstance() {
@@ -33,6 +34,11 @@ export default class App extends Vue {
     KeyboardS.listenKeyDown().subscribe(e => console.log(e))
     KeyboardS.listenKeyUp().subscribe(e => console.log(e))
   }
+
+  private initDocumentUtils() {
+    DraggableS.interact()
+    ContextMenuS.prenventContextMenu()
+  }
 }
 </script>
 <style lang="scss">
@@ -42,5 +48,12 @@ export default class App extends Vue {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+body {
+  overflow: hidden;
+}
+.draggable {
+  touch-action: none;
+  user-select: none;
 }
 </style>
