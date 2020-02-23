@@ -4,6 +4,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
+import { DraggableS } from '@/services'
 
 @Component({ props: { icon: {} } })
 export default class Icon extends Vue {}
