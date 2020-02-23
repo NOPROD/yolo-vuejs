@@ -2,14 +2,14 @@ const GlobalState = {
   state: { global: { lang: 'fr', rpgActivated: false } },
   mutations: {
     activeRpg(state: any) {
-      state.globalState.rpgActivated = true
+      state.global.rpgActivated = true
     }
   },
-  actions: {
-    changeLang(context: any, lang: string) {
-      context.state.globalState.lang = lang
+  actions: {},
+  getters: {
+    isRpg: (state: any) => {
+      return state.global.rpgActivated
     }
-  },
-  getters: {}
+  }
 }
 export { GlobalState }

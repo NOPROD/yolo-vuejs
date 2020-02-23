@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { AnimeS } from '@/services/Anime'
+import { AnimeS } from '@/services'
 import { AnimationState } from './Animation'
 import { GlobalState } from './GlobalState'
 import { UserFollowState } from './UserFollow'

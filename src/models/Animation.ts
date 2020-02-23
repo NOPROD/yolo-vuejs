@@ -7,3 +7,10 @@ export interface AnimationBasic {
   startDelay?: number | any
   translateX?: number
 }
+
+export interface AnimationDraw {
+  className?: string
+  duration?: number
+  direction?: string
+  stroke: number[]
+}

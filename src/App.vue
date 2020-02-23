@@ -9,15 +9,29 @@
 </template>
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import { SharedInstanceS, AnimeS, ApiService, UserS, UserFS } from '@/services'
+import { SharedInstanceS } from '@/services'
+import { RpgS } from '@/services/games'
+import { KeyboardS } from '@/services/utils'
 @Component
 export default class App extends Vue {
   mounted() {
+    setTimeout(() => {
+      this.initAll()
+    }, 0)
+  }
+
+  private initAll() {
+    this.initSharedInstance()
+    this.initUtils()
+  }
+
+  private initSharedInstance() {
     SharedInstanceS.setInstance(this)
-    AnimeS
-    ApiService
-    UserS
-    UserFS
+  }
+
+  private initUtils() {
+    KeyboardS.listenKeyDown().subscribe(e => console.log(e))
+    KeyboardS.listenKeyUp().subscribe(e => console.log(e))
   }
 }
 </script>
@@ -28,9 +42,5 @@ export default class App extends Vue {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
 }
 </style>
