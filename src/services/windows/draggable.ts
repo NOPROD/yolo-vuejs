@@ -9,6 +9,8 @@ export class Draggable {
   public interact() {
     const position = { x: 0, y: 0 }
     interact('.draggable').draggable({
+      origin: { x: -100, y: 0 },
+      startAxis: 'xy',
       listeners: {
         start(event: any) {
           console.log(event.type, event.target)

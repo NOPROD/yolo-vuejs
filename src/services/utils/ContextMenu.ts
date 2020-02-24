@@ -1,5 +1,5 @@
 export class ContextMenu {
-  // DIsable context menu
+  // false : Disable context menu
   public prenventContextMenu() {
     document.oncontextmenu = function() {
       return true

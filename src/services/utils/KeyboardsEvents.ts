@@ -3,14 +3,8 @@ import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators'
 import { SharedInstanceS } from '@/services/SharedInstance'
 export class KeyboardEvents {
   private vue: Vue | null = null
-  private keyDowns$ = fromEvent<KeyboardEvent>(document, 'keyup').pipe(
-    debounceTime(150),
-    distinctUntilChanged()
-  )
-  private keyUp$ = fromEvent<KeyboardEvent>(document, 'keydown').pipe(
-    debounceTime(150),
-    distinctUntilChanged()
-  )
+  private keyDowns$ = fromEvent<KeyboardEvent>(document, 'keydown')
+  private keyUp$ = fromEvent<KeyboardEvent>(document, 'keyup')
   constructor() {
     this.initWithBarrels()
   }
