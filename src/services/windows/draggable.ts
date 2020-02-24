@@ -1,14 +1,8 @@
-import { SharedInstanceS } from '@/services/SharedInstance'
 import interact from 'interactjs'
 export class Draggable {
-  private vue: Vue | null = null
-  constructor() {
-    this.initWithBarrels()
-  }
-
   public interact() {
     const position = { x: 0, y: 0 }
-    interact('.draggable').draggable({
+    interact('.icon').draggable({
       origin: { x: -100, y: 0 },
       startAxis: 'xy',
       listeners: {
@@ -24,10 +18,24 @@ export class Draggable {
       }
     })
   }
+  public enableResize() {
+    interact('.resizable').resizable({
+      // resize from all edges and corners
+      edges: { left: true, right: true, bottom: true, top: true },
 
-  private initWithBarrels() {
-    SharedInstanceS.getInstance$().subscribe(vue => {
-      this.vue = vue
+      modifiers: [
+        // keep the edges inside the parent
+        interact.modifiers.restrictEdges({
+          outer: 'parent'
+        }),
+
+        // minimum size
+        interact.modifiers.restrictSize({
+          min: { width: 100, height: 50 }
+        })
+      ],
+
+      inertia: false
     })
   }
 }

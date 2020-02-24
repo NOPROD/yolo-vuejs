@@ -1,9 +1,5 @@
 <template>
-  <div>
-    <div v-if="Icons">
-      <Icon class="icon" :icon="iconItem" v-for="(iconItem,index) in Icons" :key="index" />
-    </div>
-  </div>
+  <div class="doc_component">doc</div>
 </template>
 
 <script lang="ts">
@@ -13,9 +9,7 @@ import { IconModel } from '@/models'
 import { IconsConst } from '@/const'
 
 @Component({ components: { Icon } })
-export default class Home extends Vue {
-  public Icons: IconModel[] = IconsConst
-}
+export default class DocComponent extends Vue {}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

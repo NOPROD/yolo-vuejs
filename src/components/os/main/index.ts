@@ -1,1 +1,1 @@
-export * from './incon.vue'
+export * from './icon.vue'

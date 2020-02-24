@@ -1,10 +1,8 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>|
-      <router-link to="/about">About</router-link>
-    </div>
+    <div id="nav"><router-link to="/">Home</router-link>|</div>
     <router-view />
+    <Explorer />
   </div>
 </template>
 <script lang="ts">
@@ -12,7 +10,8 @@ import { Component, Vue } from 'vue-property-decorator'
 import { SharedInstanceS, DraggableS, ContextMenuS } from '@/services'
 import { RpgS } from '@/services/games'
 import { KeyboardS } from '@/services/utils'
-@Component
+import Explorer from '@/components/os/apps/explorer/Explorer.vue'
+@Component({ components: { Explorer } })
 export default class App extends Vue {
   mounted() {
     setTimeout(() => {
@@ -36,7 +35,7 @@ export default class App extends Vue {
 
   private initDocumentUtils() {
     DraggableS.interact()
-    ContextMenuS.prenventContextMenu()
+    //ContextMenuS.prenventContextMenu()
   }
 }
 </script>
@@ -60,8 +59,12 @@ body,
   height: 100%;
 }
 
+// draggable
 .draggable {
   touch-action: none;
   user-select: none;
+}
+.resizable {
+  box-sizing: border-box;
 }
 </style>

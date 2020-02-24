@@ -1,5 +1,10 @@
 <template>
-  <div class="draggable">Draggable Element</div>
+  <div v-if="icon" class="home_icon" @click="opeen">
+    <div class="icon_img">
+      <img :src="typeof icon.img === 'object' ? icon.img[0] : icon.img" />
+    </div>
+    <div class="icon_title">{{ icon.title }}</div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -7,8 +12,25 @@ import { Component, Vue } from 'vue-property-decorator'
 import { DraggableS } from '@/services'
 
 @Component({ props: { icon: {} } })
-export default class Icon extends Vue {}
+export default class Icon extends Vue {
+  mounted() {
+    console.log(typeof this.$props.icon.img)
+  }
+  opeen() {
+    console.log('hi')
+    this.$modal.show('explorer')
+  }
+}
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.home_icon {
+  display: flex;
+  flex-direction: column;
+}
+.icon_img {
+  width: 100px;
+}
+.icon_title {
+}
+</style>

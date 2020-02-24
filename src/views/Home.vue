@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Home v-bind:msg="msg" />
+    <Home />
   </div>
 </template>
 
@@ -11,9 +11,7 @@ import Vue from 'vue'
 import Component from 'vue-class-component'
 
 @Component({ components: { Home } })
-export default class HomePage extends Vue {
-  public msg = 'message'
-}
+export default class HomePage extends Vue {}
 </script>
 
 <style scoped lang="scss">
