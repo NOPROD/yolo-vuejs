@@ -47,10 +47,19 @@ export default class App extends Vue {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  display: flex;
+  flex-direction: column;
 }
 body {
   overflow: hidden;
 }
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+}
+
 .draggable {
   touch-action: none;
   user-select: none;

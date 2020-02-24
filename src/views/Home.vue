@@ -16,4 +16,8 @@ export default class HomePage extends Vue {
 }
 </script>
 
-<style lang="scss"></style>
+<style scoped lang="scss">
+.home {
+  flex-grow: 1;
+}
+</style>
