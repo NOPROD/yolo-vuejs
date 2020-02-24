@@ -1,27 +1,24 @@
-import { fromEvent, Observable } from 'rxjs'
-import {
-  debounceTime,
-  distinctUntilChanged,
-  publish,
-  refCount
-} from 'rxjs/operators'
+import { fromEvent, Observable, EMPTY, of } from 'rxjs'
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators'
 import { SharedInstanceS } from '@/services/SharedInstance'
 export class KeyboardEvents {
   private vue: Vue | null = null
+  private keyDowns$ = fromEvent<KeyboardEvent>(document, 'keyup').pipe(
+    debounceTime(150),
+    distinctUntilChanged()
+  )
+  private keyUp$ = fromEvent<KeyboardEvent>(document, 'keydown').pipe(
+    debounceTime(150),
+    distinctUntilChanged()
+  )
   constructor() {
     this.initWithBarrels()
   }
-  public listenKeyUp(): Observable<KeyboardEvent> {
-    return fromEvent<KeyboardEvent>(document, 'keyup').pipe(
-      debounceTime(150),
-      distinctUntilChanged()
-    )
-  }
 
-  public listenKeyDown(): Observable<KeyboardEvent> {
-    return fromEvent<KeyboardEvent>(document, 'keydown').pipe(
-      debounceTime(150),
-      distinctUntilChanged()
+  //* todo: fix double tab event /
+  public listenHoldKey(): Observable<KeyboardEvent> {
+    return this.keyDowns$.pipe(
+      switchMap(pressedKeyEvent => (pressedKeyEvent ? this.keyUp$ : EMPTY))
     )
   }
 

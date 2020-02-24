@@ -31,8 +31,7 @@ export default class App extends Vue {
   }
 
   private initUtils() {
-    KeyboardS.listenKeyDown().subscribe(e => console.log(e))
-    KeyboardS.listenKeyUp().subscribe(e => console.log(e))
+    KeyboardS.listenHoldKey().subscribe(e => console.log(e))
   }
 
   private initDocumentUtils() {
