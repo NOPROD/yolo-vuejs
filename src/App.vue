@@ -1,13 +1,20 @@
 <template>
   <div id="app">
-    <div id="nav"><router-link to="/">Home</router-link>|</div>
+    <div id="nav">
+      <router-link to="/">Home</router-link>|
+    </div>
     <router-view />
     <Explorer />
   </div>
 </template>
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import { SharedInstanceS, DraggableS, ContextMenuS } from '@/services'
+import {
+  SharedInstanceS,
+  DraggableS,
+  ContextMenuS,
+  ExplorerS
+} from '@/services'
 import { RpgS } from '@/services/games'
 import { KeyboardS } from '@/services/utils'
 import Explorer from '@/components/os/apps/explorer/Explorer.vue'
@@ -23,6 +30,7 @@ export default class App extends Vue {
     this.initSharedInstance()
     this.initUtils()
     this.initDocumentUtils()
+    this.initApps()
   }
 
   private initSharedInstance() {
@@ -36,6 +44,10 @@ export default class App extends Vue {
   private initDocumentUtils() {
     DraggableS.interact()
     //ContextMenuS.prenventContextMenu()
+  }
+
+  private initApps() {
+    ExplorerS.rightClickAnyWhere$.subscribe(console.log)
   }
 }
 </script>

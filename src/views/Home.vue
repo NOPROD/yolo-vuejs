@@ -9,7 +9,6 @@
 import Home from '@/components/Home.vue'
 import Vue from 'vue'
 import Component from 'vue-class-component'
-
 @Component({ components: { Home } })
 export default class HomePage extends Vue {}
 </script>
