@@ -1,9 +1,9 @@
 <template>
-  <div v-if="icon" class="home_icon" @click="opeen">
+  <div v-if="icon" class="home_icon" @click.left="openDialogL" @click.right="openMenuR">
     <div class="icon_img">
       <img :src="typeof icon.img === 'object' ? icon.img[0] : icon.img" />
     </div>
-    <div class="icon_title">{{ icon.title }}</div>
+    <!-- <div class="icon_title">{{ icon.title }}</div> -->
   </div>
 </template>
 
@@ -16,9 +16,11 @@ export default class Icon extends Vue {
   mounted() {
     console.log(typeof this.$props.icon.img)
   }
-  opeen() {
-    console.log('hi')
-    this.$modal.show('explorer')
+  openDialogL() {
+    console.log('left')
+  }
+  openMenuR() {
+    console.log('right')
   }
 }
 </script>

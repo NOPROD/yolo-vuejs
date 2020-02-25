@@ -1,8 +1,8 @@
 <template>
   <modal
-    name="explorer_dialog"
+    name="dialog"
     transition="nice-modal-fade"
-    classes="os_explorer_default"
+    classes="os_dialog_default"
     :min-width="200"
     :min-height="200"
     :pivot-y="0.5"
@@ -16,13 +16,10 @@
     @closed="closed"
     @before-close="beforeClose"
   >
-    <div class="os_explorer_default_content">
-      <div class="os_explorer_default_taskbar"></div>
-      <div class="os_explorer_default_view">
+    <div class="os_dialog_default_content">
+      <div class="os_dialog_default_actions">
         <Icon />
       </div>
-      <div class="os_explorer_default_header"></div>
-      <div class="os_explorer_default_pan_left"></div>
     </div>
   </modal>
 </template>
@@ -32,7 +29,11 @@ import { Component, Vue } from 'vue-property-decorator'
 import Icon from '@/components/os/main/icon.vue'
 
 @Component({ components: { Icon } })
-export default class ExplorerComponent extends Vue {
+export default class ExplorerDialogComponent extends Vue {
+  public mounted() {
+    console.log('Dialog explorer opened')
+    console.log(this)
+  }
   public beforeOpen() {
     console.log('before open')
   }
@@ -49,18 +50,4 @@ export default class ExplorerComponent extends Vue {
 </script>
 
 <style scoped lang="scss">
-.explorer_component {
-}
-.os_explorer_default_content {
-}
-.os_explorer_default_taskbar {
-  position: absolute;
-  margin: 25px;
-}
-.os_explorer_default_view {
-}
-.os_explorer_default_header {
-}
-.os_explorer_default_pan_left {
-}
 </style>
