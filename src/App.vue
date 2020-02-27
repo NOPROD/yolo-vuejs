@@ -13,7 +13,8 @@ import {
   SharedInstanceS,
   DraggableS,
   ContextMenuS,
-  ExplorerS
+  ExplorerS,
+  ContextMenuES
 } from '@/services'
 import { RpgS } from '@/services/games'
 import { KeyboardS } from '@/services/utils'
@@ -30,7 +31,6 @@ export default class App extends Vue {
     this.initSharedInstance()
     this.initUtils()
     this.initDocumentUtils()
-    this.initApps()
   }
 
   private initSharedInstance() {
@@ -44,10 +44,10 @@ export default class App extends Vue {
   private initDocumentUtils() {
     DraggableS.interact()
     //ContextMenuS.prenventContextMenu()
-  }
-
-  private initApps() {
-    ExplorerS.rightClickAnyWhere$.subscribe(console.log)
+    ContextMenuES.holdClickActions(
+      this.$modal.show('explorer_dialog'),
+      this.$modal.show('explorer_dialog')
+    )
   }
 }
 </script>

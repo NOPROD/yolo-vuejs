@@ -16,23 +16,18 @@
     @closed="closed"
     @before-close="beforeClose"
   >
-    <div class="os_explorer_default_content">
-      <div class="os_explorer_default_taskbar"></div>
-      <div class="os_explorer_default_view">
-        <Icon />
-      </div>
-      <div class="os_explorer_default_header"></div>
-      <div class="os_explorer_default_pan_left"></div>
-    </div>
+    <component :is="Component"></component>
   </modal>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import Icon from '@/components/os/main/icon.vue'
+import { ContextMenuES } from '@/services'
 
-@Component({ components: { Icon } })
+@Component({ components: { Icon, Component }, props: { component: {} } })
 export default class ExplorerComponent extends Vue {
+  public mounted() {}
   public beforeOpen() {
     console.log('before open')
   }

@@ -16,11 +16,7 @@
     @closed="closed"
     @before-close="beforeClose"
   >
-    <div class="os_dialog_default_content">
-      <div class="os_dialog_default_actions">
-        <Icon />
-      </div>
-    </div>
+    <component :is="Component"></component>
   </modal>
 </template>
 
@@ -28,7 +24,7 @@
 import { Component, Vue } from 'vue-property-decorator'
 import Icon from '@/components/os/main/icon.vue'
 
-@Component({ components: { Icon } })
+@Component({ components: { Icon }, props: { Component: {} } })
 export default class ExplorerDialogComponent extends Vue {
   public mounted() {
     console.log('Dialog explorer opened')
