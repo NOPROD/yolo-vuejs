@@ -8,22 +8,22 @@ export class MouseEvents {
     filter((e: any) => e.which === 3)
   )
 
-  public rightClickAnyWhere$: Observable<string> = this.upRight$.pipe(
+  public rightClickAnyWhere$: Observable<{}> = this.upRight$.pipe(
     mergeMap((e: any) =>
       iif(
         () => e.target.nodeName === 'DIV' && e.target.className === 'home',
-        of('Home window'),
-        of('Icon')
+        of({ target: 'Home window', element: e }),
+        of({ target: 'Icon', element: e })
       )
     )
   )
 
-  public leftClickAnyWhere$: Observable<string> = this.upLeft$.pipe(
+  public leftClickAnyWhere$: Observable<{}> = this.upLeft$.pipe(
     mergeMap((e: any) =>
       iif(
         () => e.target.nodeName === 'DIV' && e.target.className === 'home',
-        of('Home window'),
-        of('Icon')
+        of({ target: 'Home window', element: e }),
+        of({ target: 'Icon', element: e })
       )
     )
   )
