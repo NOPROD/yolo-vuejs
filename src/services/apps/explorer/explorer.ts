@@ -1,10 +1,10 @@
 import { Observable } from 'rxjs'
 import { MouseS } from '@/services'
 export class Explorer {
-  public holdRightClicksEvents(): Observable<string> {
+  public holdRightClicksEvents(): Observable<{}> {
     return MouseS.rightClickAnyWhere$
   }
-  public holdLefttClicksEvents(): Observable<string> {
+  public holdLefttClicksEvents(): Observable<{}> {
     return MouseS.leftClickAnyWhere$
   }
 }

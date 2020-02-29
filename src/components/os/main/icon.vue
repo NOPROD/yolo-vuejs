@@ -1,7 +1,10 @@
 <template>
-  <div v-if="icon" class="home_icon">
+  <div @click="click" v-if="icon" class="home_icon">
     <div class="icon_img">
-      <img class="icon_hook" :src="typeof icon.img === 'object' ? icon.img[0] : icon.img" />
+      <img
+        class="icon_hook"
+        :src="typeof icon.img === 'object' ? icon.img[0] : icon.img"
+      />
     </div>
     <!-- <div class="icon_title">{{ icon.title }}</div> -->
   </div>
@@ -14,6 +17,10 @@ import { Component, Vue } from 'vue-property-decorator'
 export default class Icon extends Vue {
   mounted() {
     console.log(typeof this.$props.icon.img)
+  }
+
+  public click() {
+    console.log('click')
   }
 }
 </script>
