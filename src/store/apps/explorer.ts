@@ -1,5 +1,5 @@
 const ExplorerState = {
-  state: { explorerActiv: { components: [] } },
+  state: { explorerActiv: { components: [] }, elementClicked: '' },
   mutations: {
     addProcess(state: any, process: any) {
       state.explorerActiv.components.push(process)
@@ -12,9 +12,16 @@ const ExplorerState = {
     },
     removeAllProcess(state: any) {
       state.explorerActiv.components = []
+    },
+    clickElement(state: any, element: string) {
+      state.elementClicked = element
     }
   },
   actions: {},
-  getters: {}
+  getters: {
+    getElementClicked$: (state: any) => {
+      return state.elementClicked
+    }
+  }
 }
 export { ExplorerState }

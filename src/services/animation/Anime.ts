@@ -1,12 +1,8 @@
-import { SharedInstanceS } from '@/services/SharedInstance'
-import { anime } from 'animejs/lib/anime.es'
+import anime from 'animejs/lib/anime.es'
 import { AnimationDraw } from '@/models'
 
 class AnimeService {
   private vue: Vue | null = null
-  constructor() {
-    this.initWithBarrels()
-  }
 
   // Draw svg //
   public draw(drawOptions: AnimationDraw) {
@@ -23,12 +19,8 @@ class AnimeService {
     })
   }
 
-  private initWithBarrels() {
-    SharedInstanceS.getInstance$().subscribe(this.initVue)
-  }
-
-  initVue(vue: Vue) {
-    this.vue = vue
+  public getAnime() {
+    return anime
   }
 }
 export const AnimeS = new AnimeService()
