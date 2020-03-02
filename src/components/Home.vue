@@ -1,7 +1,14 @@
 <template>
   <div>
     <div v-if="Icons">
-      <Icon class="icon" :icon="iconItem" v-for="(iconItem,index) in Icons" :key="index" />
+      <Icon
+        class="icon"
+        :iconIndex="index"
+        :icon="iconItem"
+        v-for="(iconItem,index) in Icons"
+        :key="index"
+        :draggable="true"
+      />
     </div>
   </div>
 </template>

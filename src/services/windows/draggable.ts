@@ -1,8 +1,8 @@
 import interact from 'interactjs'
 export class Draggable {
-  public interact() {
+  public interact(target: string) {
     const position = { x: 0, y: 0 }
-    interact('.icon').draggable({
+    interact(target).draggable({
       origin: { x: -100, y: 0 },
       startAxis: 'xy',
       listeners: {

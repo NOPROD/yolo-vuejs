@@ -2,14 +2,12 @@
   <div
     @click.prevent="click"
     @mouseover="scaleSvg"
+    @mouseout="unScaleSvg"
     v-if="icon"
-    class="home_icon"
+    v-bind:class="'home_icon ' + 'icon_drag_' +iconIndex"
   >
     <div class="icon_img">
-      <component
-        class="icon_hook"
-        :is="icon.img.length ? icon.img[0] : icon.img"
-      ></component>
+      <component class="icon_hook" :is="icon.img.length ? icon.img[0] : icon.img"></component>
     </div>
     <!-- <div class="icon_title">{{ icon.title }}</div> -->
   </div>
@@ -17,21 +15,23 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import { AnimeS } from '@/services'
+import { AnimeS, DraggableS } from '@/services'
 
-@Component({ props: { icon: {} } })
+@Component({ props: { icon: {}, iconIndex: {}, draggable: {} } })
 export default class Icon extends Vue {
   mounted() {
-    console.log(this.$props.icon.img.length)
+    this.$props.draggable
+      ? DraggableS.interact('.icon_drag_' + this.$props.iconIndex)
+      : null
   }
 
   public click() {
-    console.log('commit')
     this.$store.commit('clickElement', this.$props.icon.title)
     this.$modal.show('explorer_dialog')
   }
 
   public scaleSvg() {
+    console.log('hover')
     AnimeS.getAnime()
       .timeline({
         easing: 'easeOutExpo',
@@ -39,7 +39,20 @@ export default class Icon extends Vue {
       })
       .add({
         targets: '.icon_hook path',
-        scaleZ: 1
+        scale: 3
+      })
+  }
+  public unScaleSvg() {
+    console.log('hover')
+    AnimeS.getAnime()
+      .timeline({
+        easing: 'easeOutExpo',
+        duration: 750,
+        repeat: false
+      })
+      .add({
+        targets: ['.icon_hook path', '.icon_hook g'],
+        scale: 1
       })
   }
 }

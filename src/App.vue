@@ -9,7 +9,6 @@
 import { Component, Vue } from 'vue-property-decorator'
 import {
   SharedInstanceS,
-  DraggableS,
   ContextMenuS,
   ExplorerS,
   ContextMenuES
@@ -40,7 +39,6 @@ export default class App extends Vue {
   }
 
   private initDocumentUtils() {
-    DraggableS.interact()
     //ContextMenuS.prenventContextMenu()
     ContextMenuES.holdClickActions(
       this.$modal.show('explorer_dialog'),
