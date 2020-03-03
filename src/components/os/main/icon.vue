@@ -1,11 +1,5 @@
 <template>
-  <div
-    @click.prevent="click"
-    @mouseover="scaleSvg"
-    @mouseout="unScaleSvg"
-    v-if="icon"
-    v-bind:class="'home_icon ' + 'icon_drag_' +iconIndex"
-  >
+  <div @click.prevent="click" v-if="icon" v-bind:class="'home_icon ' + 'icon_drag_' +iconIndex">
     <div class="icon_img">
       <component class="icon_hook" :is="icon.img.length ? icon.img[0] : icon.img"></component>
     </div>

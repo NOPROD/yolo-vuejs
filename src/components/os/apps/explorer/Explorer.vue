@@ -16,15 +16,7 @@
     <div class="os_explorer_close_btn">
       <button @click="$modal.hide('explorer_dialog')">Close</button>
     </div>
-    <!-- <component :is="Component"></component> -->
-    <div class="os_explorer_default_content">
-      <div class="os_explorer_default_taskbar">
-        <Icon class="icon" :icon="Icons[content.iconIndex]" />
-      </div>
-      <div class="os_explorer_default_view"></div>
-      <div class="os_explorer_default_header"></div>
-      <div class="os_explorer_default_pan_left"></div>
-    </div>
+    <component :is="component"></component>
   </modal>
 </template>
 
@@ -34,9 +26,13 @@ import Icon from '@/components/os/main/icon.vue'
 import { ContextMenuES, ContextMenuS } from '@/services'
 import { IconModel } from '@/models'
 import { IconsConst } from '@/const'
+import ExplorerDefaultContent from '@/components/os/apps/explorer/ExplorerDefaultContent.vue'
 
-@Component({ components: { Icon, Component }, props: { component: {} } })
+@Component({
+  components: { Icon, Component, ExplorerDefaultContent }
+})
 export default class ExplorerComponent extends Vue {
+  public component = ExplorerDefaultContent
   public Icons: IconModel[] = IconsConst
   public content: any = {
     iconIndex: 0
@@ -80,12 +76,7 @@ export default class ExplorerComponent extends Vue {
   display: flex;
   height: auto;
 }
-.os_explorer_default_content {
-  background-color: white;
-  width: 100%;
-  height: 100%;
-  flex-grow: 1;
-}
+
 .os_explorer_default_taskbar {
   position: absolute;
   margin: 25px;
