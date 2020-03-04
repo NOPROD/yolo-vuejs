@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <div id="nav"><router-link to="/">Home</router-link>|</div>
+    <div id="nav">
+      <router-link to="/">Home</router-link>|
+    </div>
     <router-view />
     <Explorer />
   </div>
@@ -40,10 +42,6 @@ export default class App extends Vue {
 
   private initDocumentUtils() {
     //ContextMenuS.prenventContextMenu()
-    ContextMenuES.holdClickActions(
-      this.$modal.show('explorer_dialog'),
-      this.$modal.show('explorer_dialog')
-    )
   }
 }
 </script>

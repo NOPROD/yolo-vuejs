@@ -16,7 +16,7 @@
     <div class="os_explorer_close_btn">
       <button @click="$modal.hide('explorer_dialog')">Close</button>
     </div>
-    <component :is="component"></component>
+    <component :is="component" :icon="Icons[content.iconIndex]"></component>
   </modal>
 </template>
 
@@ -46,6 +46,7 @@ export default class ExplorerComponent extends Vue {
     this.content.iconIndex = this.Icons.findIndex(
       icon => icon.title === this.$store.getters.getElementClicked$
     )
+    console.log(this.content.iconIndex)
   }
   private openWindow(data: any) {}
 

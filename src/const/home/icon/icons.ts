@@ -3,11 +3,13 @@ import EmptyBasketSvg from '@/assets/svg/icons/trash/empty_basket.svg'
 import FullBasketSvg from '@/assets/svg/icons/trash/full_basket.svg'
 import PdfSvg from '@/assets/svg/icons/settings/shared/files/pdf.svg'
 import WordSvg from '@/assets/svg/icons/settings/shared/files/word.svg'
+import PdfAppView from '@/components/os/apps/pdf/Pdf.vue'
+import DocAppView from '@/components/os/apps/doc/Doc.vue'
 
 export const svgFiles: any = {
   Corbeille: [EmptyBasketSvg, FullBasketSvg],
   Pdf: PdfSvg,
-  Word: WordSvg
+  Doc: WordSvg
 }
 export const IconsConst: IconModel[] = [
   {
@@ -16,10 +18,12 @@ export const IconsConst: IconModel[] = [
   },
   {
     title: 'Pdf',
-    img: svgFiles['Pdf']
+    img: svgFiles['Pdf'],
+    component: PdfAppView
   },
   {
-    title: 'Word',
-    img: svgFiles['Word']
+    title: 'Doc',
+    img: svgFiles['Doc'],
+    component: DocAppView
   }
 ]

@@ -1,5 +1,5 @@
 <template>
-  <div class="doc_component">doc</div>
+  <div class="pdf_component">pdf</div>
 </template>
 
 <script lang="ts">
@@ -8,7 +8,7 @@ import { IconModel } from '@/models'
 import { IconsConst } from '@/const'
 
 @Component({})
-export default class DocComponent extends Vue {}
+export default class PdfPageComponent extends Vue {}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

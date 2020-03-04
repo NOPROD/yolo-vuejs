@@ -1,14 +1,16 @@
 <template>
-  <div class="pdf_component">pdf</div>
+  <div class="pdf_component"><PdfMain /></div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import Icon from './os/main/icon.vue'
 import { IconModel } from '@/models'
 import { IconsConst } from '@/const'
+import PdfMain from '@/components/os/apps/pdf/reader/PdfMain.vue'
 
-@Component({ components: { Icon } })
+@Component({ components: { PdfMain } })
+//https://rossta.net/blog/building-a-pdf-viewer-with-vue-part-1.html
+//https://rossta.net/blog/building-a-pdf-viewer-with-vue-part-2.html
 export default class PdfComponent extends Vue {}
 </script>
 

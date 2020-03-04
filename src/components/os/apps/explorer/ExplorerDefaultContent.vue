@@ -7,7 +7,9 @@
       <div class="os_explorer_default_pan_left">
         <Panleft />
       </div>
-      <div class="default_view_content"></div>
+      <div class="default_view_content">
+        <component :is="icon.component"></component>
+      </div>
     </div>
     <div class="os_explorer_default_header"></div>
 
@@ -24,7 +26,10 @@ import Footer from '@/components/os/apps/explorer/Footer.vue'
 import Panleft from '@/components/os/apps/explorer/PanLeft.vue'
 import TaskBar from '@/components/os/apps/explorer/TaskBar.vue'
 
-@Component({ components: { Icon, TaskBar, Panleft, Footer } })
+@Component({
+  components: { Icon, TaskBar, Panleft, Footer },
+  props: { icon: {} }
+})
 export default class ExplorerDefaultContentComponent extends Vue {
   public mounted() {
     console.log('Dialog explorer opened')
@@ -59,6 +64,10 @@ export default class ExplorerDefaultContentComponent extends Vue {
 .os_explorer_default_view,
 .default_view_content {
   flex-grow: 1;
+}
+
+.os_explorer_default_pan_left {
+  max-width: 20%;
 }
 
 .os_explorer_default_view {
