@@ -8,7 +8,9 @@ import { IconModel } from '@/models'
 import { IconsConst } from '@/const'
 
 @Component({})
-export default class PdfPageComponent extends Vue {}
+export default class PdfPageComponent extends Vue {
+
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
