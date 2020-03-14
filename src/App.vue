@@ -22,18 +22,16 @@ import Explorer from '@/components/os/apps/explorer/Explorer.vue'
 export default class App extends Vue {
   mounted() {
     setTimeout(() => {
-      this.initAll()
+    //  this.initAll()
     }, 0)
   }
 
   private initAll() {
-    this.initSharedInstance()
     this.initUtils()
     this.initDocumentUtils()
   }
 
   private initSharedInstance() {
-    SharedInstanceS.setInstance(this)
   }
 
   private initUtils() {

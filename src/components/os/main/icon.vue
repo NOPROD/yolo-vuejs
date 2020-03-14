@@ -3,7 +3,7 @@
     <div class="icon_img">
       <component class="icon_hook" :is="icon.img.length ? icon.img[0] : icon.img"></component>
     </div>
-    <!-- <div class="icon_title">{{ icon.title }}</div> -->
+    <div class="icon_title">{{ icon.title }}</div>
   </div>
 </template>
 
