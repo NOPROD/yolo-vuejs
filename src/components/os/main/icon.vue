@@ -58,7 +58,7 @@ export default class Icon extends Vue {
   flex-direction: column;
 }
 .icon_img {
-  width: 100px;
+  width: 6.25em;
 }
 .icon_title {
 }

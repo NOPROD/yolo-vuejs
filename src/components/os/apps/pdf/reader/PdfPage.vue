@@ -1,9 +1,19 @@
 <template>
   <div class="pdf_component">
     <div role="toolbar" id="toolbar">
-      <div id="pager">
-        <button data-pager="prev">prev</button>
-        <button data-pager="next">next</button>
+      <div id="pager" class="pdf_actions">
+        <div class="pdf_action_first">
+          <SvgRewind />
+        </div>
+        <div class="pdf_action_previous">
+          <SvgBack />
+        </div>
+        <div class="pdf_action_next">
+          <SvgNext />
+        </div>
+        <div class="pdf_action_last">
+          <SvgForward />
+        </div>
       </div>
       <div id="page-mode">
         <label>
@@ -22,8 +32,15 @@
 import { Component, Vue } from 'vue-property-decorator'
 import { IconModel } from '@/models'
 import { IconsConst } from '@/const'
+import SvgBack from '@/assets/svg/icons/shared/arrow-circle/noun_back.svg'
+import SvgCheck from '@/assets/svg/icons/shared/arrow-circle/noun_check.svg'
+import SvgDown from '@/assets/svg/icons/shared/arrow-circle/noun_down.svg'
+import SvgForward from '@/assets/svg/icons/shared/arrow-circle/noun_forward.svg'
+import SvgNext from '@/assets/svg/icons/shared/arrow-circle/noun_next.svg'
+import SvgRewind from '@/assets/svg/icons/shared/arrow-circle/noun_rewind.svg'
+import SvgUp from '@/assets/svg/icons/shared/arrow-circle/noun_up.svg'
 
-@Component({})
+@Component({ components: { SvgRewind, SvgBack, SvgNext, SvgForward } })
 export default class PdfPageComponent extends Vue {}
 </script>
 
@@ -38,6 +55,16 @@ export default class PdfPageComponent extends Vue {}
   flex-direction: row;
 }
 #toolbar {
+  display: flex;
+  flex-direction: row;
+}
+.pdf_action_first,
+.pdf_action_previous,
+.pdf_action_next,
+.pdf_action_last {
+  width: 1.563em;
+}
+.pdf_actions {
   display: flex;
   flex-direction: row;
 }
