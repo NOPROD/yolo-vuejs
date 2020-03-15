@@ -40,8 +40,13 @@ import SvgNext from '@/assets/svg/icons/shared/arrow-circle/noun_next.svg'
 import SvgRewind from '@/assets/svg/icons/shared/arrow-circle/noun_rewind.svg'
 import SvgUp from '@/assets/svg/icons/shared/arrow-circle/noun_up.svg'
 
-@Component({ components: { SvgRewind, SvgBack, SvgNext, SvgForward } })
-export default class PdfPageComponent extends Vue {}
+@Component({
+  components: { SvgRewind, SvgBack, SvgNext, SvgForward },
+  props: { page: {}, scale: {} }
+})
+export default class PdfPageComponent extends Vue {
+  render() {}
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

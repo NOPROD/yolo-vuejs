@@ -18,14 +18,16 @@ export default class PdfDocumentComponent extends Vue {
   public pdfSelected: any = null
   private exemples = ['/sostdt.pdf']
   mounted() {
-    this.fetchAndGetPdf().subscribe(this.setPdf)
+    this.fetchAndGetPdf()
   }
 
-  private fetchAndGetPdf(): Observable<any> {
-    return of(pdfjsLib.getDocument('/sostdt.pdf'))
+  private fetchAndGetPdf(): void {
+    let linterConvert = pdfjsLib.getDocument('/sostdt.pdf') as any
+    linterConvert.then(this.setPdf)
   }
 
   private setPdf(pdfDocument: any) {
+    console.log(pdfDocument)
     this.pdfSelected = pdfDocument
   }
 
