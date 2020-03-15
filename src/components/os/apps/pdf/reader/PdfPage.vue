@@ -6,10 +6,15 @@
         <button data-pager="next">next</button>
       </div>
       <div id="page-mode">
-        <label>Page Mode <input type="number" value="1" min="1"/></label>
+        <label>
+          Page Mode
+          <input type="number" value="1" min="1" />
+        </label>
       </div>
     </div>
-    <div id="viewport-container"><div role="main" id="viewport"></div></div>
+    <div id="viewport-container">
+      <div role="main" id="viewport"></div>
+    </div>
   </div>
 </template>
 
@@ -26,5 +31,14 @@ export default class PdfPageComponent extends Vue {}
 <style scoped lang="scss">
 .icon {
   width: fit-content;
+}
+#page-mode {
+  padding-left: 0.5em;
+  display: flex;
+  flex-direction: row;
+}
+#toolbar {
+  display: flex;
+  flex-direction: row;
 }
 </style>

@@ -18,7 +18,6 @@ export default class PdfDocumentComponent extends Vue {
   public pdfSelected: any = null
   private exemples = ['/sostdt.pdf']
   mounted() {
-    console.log(pdfjsLib)
     this.fetchAndGetPdf().subscribe(this.setPdf)
   }
 
@@ -27,7 +26,6 @@ export default class PdfDocumentComponent extends Vue {
   }
 
   private setPdf(pdfDocument: any) {
-    console.log(pdfDocument)
     this.pdfSelected = pdfDocument
   }
 
