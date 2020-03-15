@@ -17,8 +17,8 @@
       </div>
       <div id="page-mode">
         <label>
-          Page Mode
-          <input type="number" value="1" min="1" />
+          Page :
+          <input class="pdf_page_input" type="number" value="1" min="1" />
         </label>
       </div>
     </div>
@@ -60,6 +60,7 @@ export default class PdfPageComponent extends Vue {
   flex-direction: row;
 }
 #toolbar {
+  padding: 0.5em;
   display: flex;
   flex-direction: row;
 }
@@ -72,5 +73,23 @@ export default class PdfPageComponent extends Vue {
 .pdf_actions {
   display: flex;
   flex-direction: row;
+}
+.pdf_page_input {
+  width: 2em;
+  border: none;
+  border-bottom: 1px solid #1457a4;
+  background: #f3f3f34a;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
 }
 </style>

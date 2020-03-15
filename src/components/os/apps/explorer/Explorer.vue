@@ -76,23 +76,28 @@ export default class ExplorerComponent extends Vue {
   width: auto;
   display: flex;
   height: auto;
+  border: solid 1px red;
 }
 
 .os_explorer_default_taskbar {
   position: absolute;
   margin: 25px;
+  border: solid 1px red;
 }
 .os_explorer_default_view {
 }
 .os_explorer_default_header {
+  border: solid 1px red;
 }
 .os_explorer_default_pan_left {
+  border: solid 1px red;
 }
 .os_explorer_close_btn {
   position: absolute;
   top: 0px;
   right: 0px;
   padding: 15px;
+  border: solid 1px red;
 }
 ::v-deep .icon_img {
   width: 25px !important;

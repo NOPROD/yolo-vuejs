@@ -42,6 +42,7 @@ export default class ExplorerDefaultContentComponent extends Vue {
 .os_explorer_default_footer {
   position: relative;
   bottom: 0px;
+  border: solid 1px grey;
 }
 .os_explorer_default_content {
   background-color: white;
@@ -50,6 +51,7 @@ export default class ExplorerDefaultContentComponent extends Vue {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  border: solid 1px grey;
 }
 .os_explorer_default_footer {
   position: relative;
@@ -63,7 +65,9 @@ export default class ExplorerDefaultContentComponent extends Vue {
 .os_explorer_default_pan_left,
 .os_explorer_default_view,
 .default_view_content {
+  padding: 1em;
   flex-grow: 1;
+  border: solid 1px grey;
 }
 
 .os_explorer_default_pan_left {
