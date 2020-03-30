@@ -1,4 +1,2 @@
-export * from './animation'
-export * from './window'
-export * from './home'
-export * from './utils'
+export * from './Animation'
+export * from './personalContent'

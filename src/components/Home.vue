@@ -1,33 +1,27 @@
 <template>
-  <div>
-    <div v-if="Icons">
-      <Icon
-        class="icon"
-        :iconIndex="index"
-        :icon="iconItem"
-        v-for="(iconItem,index) in Icons"
-        :key="index"
-        :draggable="true"
-      />
+  <div class="main_home">
+    home
+    <div data-relative-input="true" id="scene">
+      <div data-depth="0.2">My first Layer!</div>
+      <div data-depth="0.6">My second Layer!</div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import Icon from './os/main/icon.vue'
-import { IconModel } from '@/models'
-import { IconsConst } from '@/const'
+import { parallaxS } from '@/services'
 
-@Component({ components: { Icon } })
+@Component
 export default class Home extends Vue {
-  public Icons: IconModel[] = IconsConst
+  mounted() {
+    parallaxS.getInstance(document.getElementById('scene'))
+  }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.icon {
-  width: fit-content;
+.main_home {
 }
 </style>

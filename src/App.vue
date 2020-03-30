@@ -4,43 +4,14 @@
       <router-link to="/">Home</router-link>|
     </div>
     <router-view />
-    <Explorer />
   </div>
 </template>
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import {
-  SharedInstanceS,
-  ContextMenuS,
-  ExplorerS,
-  ContextMenuES
-} from '@/services'
-import { RpgS } from '@/services/games'
-import { KeyboardS } from '@/services/utils'
-import Explorer from '@/components/os/apps/explorer/Explorer.vue'
-@Component({ components: { Explorer } })
+import {} from '@/services'
+@Component({})
 export default class App extends Vue {
-  mounted() {
-    setTimeout(() => {
-    //  this.initAll()
-    }, 0)
-  }
-
-  private initAll() {
-    this.initUtils()
-    this.initDocumentUtils()
-  }
-
-  private initSharedInstance() {
-  }
-
-  private initUtils() {
-    KeyboardS.listenHoldKey().subscribe(e => console.log(e))
-  }
-
-  private initDocumentUtils() {
-    //ContextMenuS.prenventContextMenu()
-  }
+  mounted() {}
 }
 </script>
 <style lang="scss">
@@ -61,14 +32,5 @@ body,
 #app {
   width: 100%;
   height: 100%;
-}
-
-// draggable
-.draggable {
-  touch-action: none;
-  user-select: none;
-}
-.resizable {
-  box-sizing: border-box;
 }
 </style>
