@@ -1,28 +1,39 @@
 <template>
-  <div class="shrad_main">
-    <div class="home">
-      <Home />
-    </div>
-    <Footer />
-  </div>
+  <div class="view_personnal_resume"><PersonnalResumeView /></div>
 </template>
 
 <script lang="ts">
-// @ is an alias to /src
-import Home from '@/components/Home.vue'
-import Vue from 'vue'
-import Component from 'vue-class-component'
-import Footer from '@/components/Footer.vue'
-@Component({ components: { Home, Footer } })
+import { Component, Vue } from 'vue-property-decorator'
+import PersonnalResumeView from '@/components/views/PersonnalResumeView.vue'
+import { parallaxS } from '@/services'
+
+@Component({ components: { PersonnalResumeView } })
 export default class PersonnalResume extends Vue {
   mounted() {
-    console.log('personnal resue view')
+    // this.initParallax()
+  }
+
+  public initParallax() {
+    parallaxS.getInstance(document.getElementById('scene'))
   }
 }
 </script>
 
+<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.home {
-  flex-grow: 1;
+.main_home {
 }
 </style>
+
+<i18n lang="json5">
+{
+  "en": {
+    "title": {"hi":"hi"
+    }
+  },
+  "fr": {
+    "title": {"hi":"hi"
+    }
+}
+}
+</i18n>

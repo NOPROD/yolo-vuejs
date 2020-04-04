@@ -3,18 +3,22 @@
     <div id="nav">
       <router-link to="/">Home</router-link>
     </div>
-    <router-view />
+    <router-view class="grid-0" />
+    <Footer />
   </div>
 </template>
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
+import Footer from '@/components/Footer.vue'
 import {} from '@/services'
-@Component({})
+@Component({ components: { Footer } })
 export default class App extends Vue {
   mounted() {}
 }
 </script>
 <style lang="scss">
+@import 'assets/scss/grid_rules.scss';
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -24,6 +28,11 @@ export default class App extends Vue {
   display: flex;
   flex-direction: column;
 }
+
+* {
+  font-family: 'Lato', sans-serif;
+}
+
 html,
 body,
 #app {
