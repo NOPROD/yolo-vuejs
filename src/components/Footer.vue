@@ -1,5 +1,7 @@
 <template>
-  <div class="main_footer">footer</div>
+  <div class="main_footer">
+    <div class="website_by">Implement By Boucham Amine ©2019</div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -13,9 +15,6 @@ export default class Footer extends Vue {
   public mounted() {}
 }
 </script>
-
-
-
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">

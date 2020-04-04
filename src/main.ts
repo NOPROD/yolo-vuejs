@@ -4,6 +4,8 @@ import router from './router'
 import store from './store'
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.min.css'
+import VueI18n from 'vue-i18n'
+Vue.use(VueI18n)
 
 Vue.config.productionTip = false
 Vue.use(VueMaterial)

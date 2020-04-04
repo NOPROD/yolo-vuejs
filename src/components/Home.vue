@@ -15,6 +15,14 @@ import { parallaxS } from '@/services'
 @Component
 export default class Home extends Vue {
   mounted() {
+    console.log(this.$i18n)
+    setTimeout(() => {
+      console.log(this)
+    }, 1000)
+    // this.initParallax()
+  }
+
+  public initParallax() {
     parallaxS.getInstance(document.getElementById('scene'))
   }
 }
@@ -25,3 +33,16 @@ export default class Home extends Vue {
 .main_home {
 }
 </style>
+
+<i18n lang="json5">
+{
+  "en": {
+    "title": {"hi":"hi"
+    }
+  },
+  "fr": {
+    "title": {"hi":"hi"
+    }
+}
+}
+</i18n>
