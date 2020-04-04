@@ -1,5 +1,5 @@
 <template>
-  <div class="view_personnal_resume">
+  <div class="view_personnal_resume col-desk-10">
     <div class="view_perso_title">view perso title</div>
     <div class="view_perso_intro">view perso intro</div>
     <div class="view_perso_bloc_exemple_preview">
@@ -25,7 +25,7 @@ export default class PersonnalResumeView extends Vue {
     {
       title: 'First exemple',
       gif: 'First gif',
-      actions: [{ title: 'First action', callBack: ()=>{console.log('action')}) }]
+      actions: [{ title: 'First action', callBack: '' }]
     },
     {
       title: 'Second exemple',

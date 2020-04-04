@@ -3,7 +3,7 @@
     <div id="nav">
       <router-link to="/">Home</router-link>
     </div>
-    <router-view class="grid-0" />
+    <router-view />
     <Footer />
   </div>
 </template>

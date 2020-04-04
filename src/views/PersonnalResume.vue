@@ -1,5 +1,5 @@
 <template>
-  <div class="view_personnal_resume"><PersonnalResumeView /></div>
+  <div class="view_personnal_resume grid-center"><PersonnalResumeView /></div>
 </template>
 
 <script lang="ts">

@@ -86,6 +86,14 @@ $mob-gutter: (
   &-0 {
     @include grid-base(100%);
   }
+  &-center {
+    @include grid-base(100%);
+    justify-content: center;
+  }
+  &-center-0 {
+    @include grid-base(100%);
+    justify-content: center;
+  }
 }
 
 .col {
