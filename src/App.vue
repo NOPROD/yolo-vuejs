@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Header class="app_header" />
     <div id="nav">
       <router-link to="/">Home</router-link>
     </div>
@@ -10,8 +11,9 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import Footer from '@/components/Footer.vue'
+import Header from '@/components/Header.vue'
 import {} from '@/services'
-@Component({ components: { Footer } })
+@Component({ components: { Header, Footer } })
 export default class App extends Vue {
   mounted() {}
 }
@@ -53,6 +55,12 @@ body,
     #f0f0f0,
     #f7f7f7
   );
+}
+
+.app_header {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 </style>
 

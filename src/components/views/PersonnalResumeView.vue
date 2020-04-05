@@ -1,16 +1,19 @@
 <template>
-  <div class="view_personnal_resume col-desk-10">
-    <div class="view_perso_title">view perso title</div>
-    <div class="view_perso_intro">view perso intro</div>
-    <div class="view_perso_bloc_exemple_preview">
-      <BlocExemplePreview
-        v-for="(content, index) in tempBlocExemple"
-        :key="index"
-        :BlocExempleContent="content"
-      />
+  <div class="view_personnal_resume col-desk-10 grid-0">
+    <div class="view_personnal_main_content col-desk-12 col-tab-6 col-mob-4">
+      <div class="view_perso_title">view perso title</div>
+      <div class="view_perso_intro">view perso intro</div>
     </div>
-    <div class="view_perso_resume_content">view perso content</div>
-    <div class="view_perso_action">view perso action</div>
+
+    <div
+      class="view_perso_bloc_exemple_preview col-desk-6 col-tab-3 col-mob-2"
+      v-for="(content, index) in tempBlocExemple"
+      :key="index"
+    >
+      <BlocExemplePreview :BlocExempleContent="content" />
+    </div>
+    <div class="view_perso_resume_low_content">view perso content</div>
+    <div class="view_perso_low_action">view perso action</div>
   </div>
 </template>
 
@@ -49,6 +52,14 @@ export default class PersonnalResumeView extends Vue {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .main_home {
+}
+
+.view_perso_bloc_exemple_preview {
+  padding: 1.5em 2em;
+}
+
+.view_perso_bloc_exemple_preview:hover {
+  background-color: red;
 }
 </style>
 
