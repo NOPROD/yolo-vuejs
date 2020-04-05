@@ -19,13 +19,13 @@ class AnimeService {
     })
   }
 
-  public drawLine(target: string) {
+  public drawLine(target: string | string[]) {
     anime.timeline({ loop: false }).add({
       targets: target,
       strokeDashoffset: [anime.setDashoffset, 0],
       easing: 'easeInOutSine',
       stroke: '#808080',
-      duration: 700,
+      duration: 5000,
       delay: function(el: any, i: any) {
         return i * 250
       },

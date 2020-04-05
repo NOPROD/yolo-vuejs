@@ -1,7 +1,6 @@
 <template>
   <div class="view_personnal_resume grid-center"><PersonnalResumeView /></div>
 </template>
-
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import PersonnalResumeView from '@/components/views/PersonnalResumeView.vue'

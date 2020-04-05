@@ -12,8 +12,12 @@
     >
       <BlocExemplePreview :BlocExempleContent="content" />
     </div>
-    <div class="view_perso_resume_low_content">view perso content</div>
-    <div class="view_perso_low_action">view perso action</div>
+    <div class="view_perso_resume_low_content col-desk-12 col-tab-6 col-mob-4">
+      view perso content
+    </div>
+    <div class="view_perso_low_action col-desk-12 col-tab-6 col-mob-4">
+      view perso action
+    </div>
   </div>
 </template>
 
@@ -56,10 +60,6 @@ export default class PersonnalResumeView extends Vue {
 
 .view_perso_bloc_exemple_preview {
   padding: 1.5em 2em;
-}
-
-.view_perso_bloc_exemple_preview:hover {
-  background-color: red;
 }
 </style>
 
