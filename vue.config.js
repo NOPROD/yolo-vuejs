@@ -6,7 +6,7 @@ module.exports = {
       .resourceQuery(/blockType=i18n/)
       .type('javascript/auto')
       .use('i18n')
-      .loader('@kazupon/vue-i18n-loader')o
+      .loader('@kazupon/vue-i18n-loader')
     // Svg rules
     const svgRule = config.module.rule('svg')
     svgRule.uses.clear()

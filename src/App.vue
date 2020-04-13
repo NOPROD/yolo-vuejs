@@ -6,14 +6,16 @@
     </div>
     <router-view />
     <Footer />
+    <starsParticles />
   </div>
 </template>
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import Footer from '@/components/Footer.vue'
 import Header from '@/components/Header.vue'
+import starsParticles from '@/components/shared/animations/StarsParticles.vue'
 import {} from '@/services'
-@Component({ components: { Header, Footer } })
+@Component({ components: { Header, Footer, starsParticles } })
 export default class App extends Vue {
   mounted() {}
 }
@@ -40,27 +42,20 @@ body,
 #app {
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(
-    to right,
-    #f3f3f3,
-    #ececec,
-    #e6e6e6,
-    #dfdfdf,
-    #d9d9d9,
-    #d9d9d9,
-    #dadada,
-    #dadada,
-    #e1e1e1,
-    #e8e8e8,
-    #f0f0f0,
-    #f7f7f7
-  );
+  background-color: #17182f;
 }
 
 .app_header {
   position: absolute;
   top: 0;
   right: 0;
+}
+#starsParticles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 </style>
 
