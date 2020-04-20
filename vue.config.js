@@ -1,4 +1,12 @@
 module.exports = {
+  css: {
+    loaderOptions: {
+      sass: {
+        prependData: `@import "@/assets/scss/bootstrap_variants.scss";
+                      @import "@/assets/scss/material_cards.scss";`
+      }
+    }
+  },
   chainWebpack: config => {
     // i18n inline webpack config
     config.module

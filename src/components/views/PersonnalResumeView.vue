@@ -1,24 +1,42 @@
 <template>
-  <div class="view_personnal_resume col-desk-10 grid-0">
-    <div class="view_personnal_main_content col-desk-12 col-tab-6 col-mob-4">
-      <div class="view_perso_title">view perso title</div>
-      <div class="view_perso_intro">view perso intro</div>
-    </div>
-
-    <div
-      class="view_perso_bloc_exemple_preview col-desk-6 col-tab-3 col-mob-2"
-      v-for="(content, index) in tempBlocExemple"
-      :key="index"
-    >
-      <BlocExemplePreview :BlocExempleContent="content" />
-    </div>
-    <div class="view_perso_resume_low_content col-desk-12 col-tab-6 col-mob-4">
-      view perso content
-    </div>
-    <div class="view_perso_low_action col-desk-12 col-tab-6 col-mob-4">
-      view perso action
-    </div>
-  </div>
+  <b-container align="center" fluid>
+    <b-row align-v="start"
+      ><b-col col cols="12" xl="12" lg="12" md="12" align="center">
+        ff
+      </b-col>
+    </b-row>
+    <b-row align-v="center">
+      <b-col col cols="12" xl="12" lg="12" md="12" align="center">
+        <b-row>
+          <b-col
+            col
+            cols="6"
+            xl="4"
+            lg="4"
+            md="4"
+            align="center"
+            v-for="(content, index) in tempBlocExemple"
+            :key="index"
+          >
+            <BlocExemplePreview :BlocExempleContent="content" />
+          </b-col>
+        </b-row>
+        <b-row>
+          <b-col
+            col
+            cols="12"
+            xl="12"
+            lg="12"
+            md="12"
+            align="center"
+            class="view_perso_low_action col-desk-12 col-tab-6 col-mob-4"
+          >
+            view perso action
+          </b-col></b-row
+        >
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script lang="ts">
