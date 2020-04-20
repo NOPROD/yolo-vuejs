@@ -1,4 +1,5 @@
+export * from './Animation'
+export * from './personalContent'
+
+// All animation models
 export * from './animation'
-export * from './window'
-export * from './home'
-export * from './utils'

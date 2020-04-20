@@ -1,49 +1,28 @@
 <template>
   <div id="app">
+    <Header class="app_header" />
     <div id="nav">
-      <router-link to="/">Home</router-link>|
+      <router-link to="/">Home</router-link>
     </div>
     <router-view />
-    <Explorer />
+    <Footer />
+    <starsParticles />
   </div>
 </template>
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import {
-  SharedInstanceS,
-  ContextMenuS,
-  ExplorerS,
-  ContextMenuES
-} from '@/services'
-import { RpgS } from '@/services/games'
-import { KeyboardS } from '@/services/utils'
-import Explorer from '@/components/os/apps/explorer/Explorer.vue'
-@Component({ components: { Explorer } })
+import Footer from '@/components/Footer.vue'
+import Header from '@/components/Header.vue'
+import starsParticles from '@/components/shared/animations/StarsParticles.vue'
+import {} from '@/services'
+@Component({ components: { Header, Footer, starsParticles } })
 export default class App extends Vue {
-  mounted() {
-    setTimeout(() => {
-    //  this.initAll()
-    }, 0)
-  }
-
-  private initAll() {
-    this.initUtils()
-    this.initDocumentUtils()
-  }
-
-  private initSharedInstance() {
-  }
-
-  private initUtils() {
-    KeyboardS.listenHoldKey().subscribe(e => console.log(e))
-  }
-
-  private initDocumentUtils() {
-    //ContextMenuS.prenventContextMenu()
-  }
+  mounted() {}
 }
 </script>
 <style lang="scss">
+@import 'assets/scss/grid_rules.scss';
+@import 'assets/scss/simple_shared.scss';
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -53,22 +32,42 @@ export default class App extends Vue {
   display: flex;
   flex-direction: column;
 }
-body {
-  overflow: hidden;
+
+* {
+  font-family: 'Lato', sans-serif;
 }
+
 html,
 body,
 #app {
   width: 100%;
   height: 100%;
+  background-color: #17182f;
 }
 
-// draggable
-.draggable {
-  touch-action: none;
-  user-select: none;
+.app_header {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
-.resizable {
-  box-sizing: border-box;
+#starsParticles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 </style>
+
+<i18n lang="json5">
+{
+  "en": {
+    "apTitle": {"hi":"hi"
+    }
+  },
+  "fr": {
+    "apTitle": {"hi":"hi"
+    }
+}
+}
+</i18n>

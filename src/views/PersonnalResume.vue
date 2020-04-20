@@ -1,24 +1,14 @@
 <template>
-  <div class="main_home">
-    home
-    <div data-relative-input="true" id="scene">
-      <div data-depth="0.2">My first Layer!</div>
-      <div data-depth="0.6">My second Layer!</div>
-    </div>
-  </div>
+  <div class="view_personnal_resume grid-center"><PersonnalResumeView /></div>
 </template>
-
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
+import PersonnalResumeView from '@/components/views/PersonnalResumeView.vue'
 import { parallaxS } from '@/services'
 
-@Component
-export default class Home extends Vue {
+@Component({ components: { PersonnalResumeView } })
+export default class PersonnalResume extends Vue {
   mounted() {
-    console.log(this.$i18n)
-    setTimeout(() => {
-      console.log(this)
-    }, 1000)
     // this.initParallax()
   }
 

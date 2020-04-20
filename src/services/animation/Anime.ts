@@ -19,6 +19,34 @@ class AnimeService {
     })
   }
 
+  public drawLine(target: string | string[]) {
+    anime.timeline({ loop: false }).add({
+      targets: target,
+      strokeDashoffset: [anime.setDashoffset, 0],
+      easing: 'easeInOutSine',
+      stroke: '#808080',
+      duration: 5000,
+      delay: function(el: any, i: any) {
+        return i * 250
+      },
+      direction: 'alternate'
+    })
+  }
+
+  public unDrawLine(target: string) {
+    anime.timeline({ loop: false }).add({
+      targets: target,
+      strokeDashoffset: [0, anime.setDashoffset],
+      easing: 'easeInOutSine',
+      stroke: '#808080',
+      duration: 700,
+      delay: function(el: any, i: any) {
+        return i * 250
+      },
+      direction: 'alternate'
+    })
+  }
+
   public getAnime() {
     return anime
   }

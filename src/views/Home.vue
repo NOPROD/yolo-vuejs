@@ -1,6 +1,9 @@
 <template>
-  <div class="home">
-    <Home />
+  <div class="shrad_main">
+    <div class="home">
+      <Home />
+    </div>
+    <Footer />
   </div>
 </template>
 
@@ -9,7 +12,8 @@
 import Home from '@/components/Home.vue'
 import Vue from 'vue'
 import Component from 'vue-class-component'
-@Component({ components: { Home } })
+import Footer from '@/components/Footer.vue'
+@Component({ components: { Home, Footer } })
 export default class HomePage extends Vue {}
 </script>
 
