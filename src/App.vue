@@ -21,8 +21,7 @@ export default class App extends Vue {
 }
 </script>
 <style lang="scss">
-@import 'assets/scss/grid_rules.scss';
-@import 'assets/scss/simple_shared.scss';
+@import '~bootstrap/scss/bootstrap';
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

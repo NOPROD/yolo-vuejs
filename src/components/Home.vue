@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import { parallaxS } from '@/services'
+import {} from '@/services'
 
 @Component
 export default class Home extends Vue {
@@ -20,10 +20,6 @@ export default class Home extends Vue {
       console.log(this)
     }, 1000)
     // this.initParallax()
-  }
-
-  public initParallax() {
-    parallaxS.getInstance(document.getElementById('scene'))
   }
 }
 </script>
