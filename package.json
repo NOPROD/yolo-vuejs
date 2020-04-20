@@ -15,6 +15,7 @@
     "bootstrap": "^4.4.1",
     "bootstrap-vue": "^2.11.0",
     "core-js": "^3.6.4",
+    "greensock": "^1.20.2",
     "mobile-device-detect": "^0.3.3",
     "parallax-js": "^3.1.0",
     "particles.js": "^2.0.0",
